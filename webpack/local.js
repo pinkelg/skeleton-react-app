@@ -11,13 +11,13 @@ const localConfig = {
     liveReload: true,
     hot: true,
     http2: true,
-    historyApiFallback: true,
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "..", "./public/index.html"),
-    }),
-  ],
+      template: path.resolve(__dirname, "..", "./public/index.html")
+    })
+  ]
 };
 
 module.exports = merge(commonConfig, localConfig);

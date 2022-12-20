@@ -12,12 +12,12 @@ module.exports = {
             test: /\.(tsx|mjs|jsx|ts|js)$/,
             exclude: /node_modules/,
             use: {
-              loader: "babel-loader",
-            },
-          },
-        ],
-      },
-    ],
+              loader: "babel-loader"
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new CopyWebpackPlugin({
@@ -25,11 +25,11 @@ module.exports = {
         {
           from: path.resolve(__dirname, "../public"),
           globOptions: {
-            ignore: ["**/*.html"],
+            ignore: ["**/*.html"]
           },
-          to: "./",
-        },
-      ],
-    }),
-  ],
+          to: "./"
+        }
+      ]
+    })
+  ]
 };
