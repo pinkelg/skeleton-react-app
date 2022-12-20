@@ -5,15 +5,15 @@ module.exports = {
       "@babel/preset-react",
       {
         development: isDevelopment,
-        runtime: "automatic",
-      },
+        runtime: "automatic"
+      }
     ],
     [
       "@babel/preset-typescript",
       {
         isTSX: true,
-        allExtensions: true,
-      },
+        allExtensions: true
+      }
     ],
     [
       "@babel/preset-env",
@@ -27,10 +27,10 @@ module.exports = {
         exclude: ["transform-typeof-symbol"],
         loose: true,
         targets: {
-          node: "current",
-        },
-      },
-    ],
+          node: "current"
+        }
+      }
+    ]
   ],
   plugins: [
     ["@babel/plugin-proposal-class-properties", { loose: true }],
@@ -40,9 +40,9 @@ module.exports = {
         corejs: false,
         helpers: !isDevelopment,
         regenerator: !isDevelopment,
-        useESModules: !isDevelopment,
-      },
-    ],
+        useESModules: !isDevelopment
+      }
+    ]
   ],
   env: {
     production: {
@@ -50,10 +50,10 @@ module.exports = {
         [
           "babel-plugin-transform-react-remove-prop-types",
           {
-            removeImport: true,
-          },
-        ],
-      ],
-    },
-  },
+            removeImport: true
+          }
+        ]
+      ]
+    }
+  }
 };
