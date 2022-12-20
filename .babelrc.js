@@ -1,21 +1,7 @@
 const isDevelopment = process.env.NODE_ENV !== "production";
-module.exports = {
-  presets: [
-    [
-      "@babel/preset-react",
-      {
-        development: isDevelopment,
-        runtime: "automatic"
-      }
-    ],
-    [
-      "@babel/preset-typescript",
-      {
-        isTSX: true,
-        allExtensions: true
-      }
-    ],
-    [
+const envPreset = isDevelopment
+  ? ["@babel/preset-env", { loose: true }]
+  : [
       "@babel/preset-env",
       {
         modules: false,
@@ -30,7 +16,24 @@ module.exports = {
           node: "current"
         }
       }
-    ]
+    ];
+
+module.exports = {
+  presets: [
+    [
+      "@babel/preset-react",
+      {
+        runtime: "automatic"
+      }
+    ],
+    [
+      "@babel/preset-typescript",
+      {
+        isTSX: true,
+        allExtensions: true
+      }
+    ],
+    envPreset
   ],
   plugins: [
     ["@babel/plugin-proposal-class-properties", { loose: true }],
