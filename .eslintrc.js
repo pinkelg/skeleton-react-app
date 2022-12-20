@@ -29,6 +29,9 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "react-hooks", "prettier"],
   rules: {
-    "prettier/prettier": ["error", prettierConfig]
+    "prettier/prettier": ["error", prettierConfig],
+    // https://github.com/microsoft/TypeScript/issues/41882#issuecomment-849849503
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   }
 };
