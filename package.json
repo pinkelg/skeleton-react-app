@@ -11,6 +11,7 @@
     "lint:fix": "npm run lint -- --fix",
     "lint": "eslint . --ext src/**/*.js,.jsx,.ts,.tsx",
     "prettier": "prettier --write .",
+    "analyze": "npm run package && webpack-bundle-analyzer --port 8888 dist/stats.json",
     "prepare": "husky install"
   },
   "repository": {
@@ -24,9 +25,14 @@
     "url": "https://github.com/pinkelg/skeleton-react-app/issues"
   },
   "homepage": "https://github.com/pinkelg/skeleton-react-app#readme",
+  "engines": {
+    "node": "18.12.1",
+    "npm": "8.19.2"
+  },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "webpack-bundle-analyzer": "^4.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",

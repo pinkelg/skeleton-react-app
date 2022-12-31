@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const safePostCssParser = require("postcss-safe-parser");
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const commonConfig = require("./common");
 
 const prodConfig = {
@@ -20,12 +20,12 @@ const prodConfig = {
       // both options are optional
       filename: "static/css/[name].[contenthash:8].css",
       chunkFilename: "static/css/[name].[contenthash:8].chunk.css"
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+      generateStatsFile: true,
+      statsOptions: { source: false }
     })
-    // new BundleAnalyzerPlugin({
-    //   analyzerMode: 'disabled',
-    //   generateStatsFile: true,
-    //   statsOptions: { source: false }
-    // })
   ],
   output: {
     path: path.resolve(__dirname, "..", "./dist"),
